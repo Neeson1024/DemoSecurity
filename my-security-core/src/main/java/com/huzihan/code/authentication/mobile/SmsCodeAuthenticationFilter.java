@@ -65,5 +65,4 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
         return this.mobileParameter;
     }
 
-
 }

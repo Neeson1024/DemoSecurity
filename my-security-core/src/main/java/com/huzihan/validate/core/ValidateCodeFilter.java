@@ -50,6 +50,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
     /**
      * 系统中的校验码处理器
      */
+    @Autowired
     private ValidateCodeProcessorHolder validateCodeProcessorHolder;
 
     /**
@@ -111,7 +112,7 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
             }
 
         }
-        return null;
+        return result;
     }
 
 

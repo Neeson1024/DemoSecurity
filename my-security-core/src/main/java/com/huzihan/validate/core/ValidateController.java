@@ -1,5 +1,6 @@
 package com.huzihan.validate.core;
 
+import com.huzihan.code.properties.SecurityConstants;
 import com.huzihan.code.properties.SecurityProperties;
 import com.huzihan.validate.core.image.ImageCode;
 import com.huzihan.validate.core.sms.SmsCodeSender;
@@ -26,11 +27,9 @@ public class ValidateController {
     private Map<String,ValidateCodeProcessor> validateCodeProcessors;
 
 
-    @GetMapping("/code/{type}")
-    private void craeteCode(HttpServletRequest request, HttpServletResponse response, @PathVariable String type) throws Exception {
-       validateCodeProcessors.get(type + "CodeProcessor").create(new ServletWebRequest(request,response));
+    @GetMapping(SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX + "/{type}")
+    public void craeteCode(HttpServletRequest request, HttpServletResponse response, @PathVariable String type) throws Exception {
+       validateCodeProcessors.get(type + "ValidateCodeProcessor").create(new ServletWebRequest(request,response));
     }
-
-
 
 }

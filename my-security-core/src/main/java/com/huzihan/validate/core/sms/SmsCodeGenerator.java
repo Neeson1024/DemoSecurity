@@ -1,6 +1,8 @@
-package com.huzihan.validate.core;
+package com.huzihan.validate.core.sms;
 
 import com.huzihan.code.properties.SecurityProperties;
+import com.huzihan.validate.core.ValidateCode;
+import com.huzihan.validate.core.ValidateCodeGenerator;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
